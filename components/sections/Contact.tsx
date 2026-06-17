@@ -30,11 +30,7 @@ export default function Contact() {
               만들어요
             </span>
           </h2>
-          <p className="text-[var(--muted)] text-lg leading-relaxed mb-14">
-            새로운 기회나 협업에 항상 열려 있습니다.
-            <br />
-            편하게 연락해 주세요.
-          </p>
+          <div className="mb-14" />
         </SectionWrapper>
 
         <SectionWrapper delay={0.15}>

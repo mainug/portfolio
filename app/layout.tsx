@@ -13,11 +13,11 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "박민욱 | 풀스택 개발자",
+  title: "박민욱 | 포트폴리오",
   description:
     "탄탄한 기본기를 바탕으로 사용자 중심의 웹 서비스를 만드는 개발자 박민욱입니다.",
   openGraph: {
-    title: "박민욱 | 풀스택 개발자",
+    title: "박민욱 | 포트폴리오",
     description:
       "탄탄한 기본기를 바탕으로 사용자 중심의 웹 서비스를 만드는 개발자 박민욱입니다.",
     type: "website",

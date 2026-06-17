@@ -1,10 +1,12 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Link from "next/link";
 import { motion } from "framer-motion";
 
 const navItems = [
   { label: "About", href: "#about" },
+  { label: "Terminal", href: "#terminal" },
   { label: "Skills", href: "#skills" },
   { label: "Projects", href: "#projects" },
   { label: "Contact", href: "#contact" },
@@ -45,6 +47,14 @@ export default function NavBar() {
               </a>
             </li>
           ))}
+          <li>
+            <Link
+              href="/lab"
+              className="text-sm px-3 py-1 rounded-full border border-violet-500/40 text-violet-300 hover:bg-violet-500/10 transition-colors duration-200"
+            >
+              Lab ✦
+            </Link>
+          </li>
         </ul>
         {/* Mobile menu icon placeholder */}
         <button className="md:hidden flex flex-col gap-1.5 p-1">

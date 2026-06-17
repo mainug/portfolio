@@ -1,12 +1,22 @@
 "use client";
 
+import dynamic from "next/dynamic";
 import { motion } from "framer-motion";
+
+const ParticleField = dynamic(() => import("@/components/ui/ParticleField"), {
+  ssr: false,
+});
 
 const nameChars = "박민욱".split("");
 
 export default function Hero() {
   return (
     <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden">
+      {/* Three.js particle field — z-0, fills entire hero */}
+      <div className="absolute inset-0 z-0">
+        <ParticleField />
+      </div>
+
       {/* Animated background orbs */}
       <div className="absolute inset-0 pointer-events-none select-none">
         <div className="absolute top-1/4 left-1/4 w-80 h-80 rounded-full bg-violet-600/20 blur-[80px] animate-float" />
@@ -61,21 +71,10 @@ export default function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.7, delay: 0.85 }}
-          className="text-base md:text-lg text-[var(--muted)] tracking-[0.35em] mb-8"
+          className="text-base md:text-lg text-[var(--muted)] tracking-[0.35em] mb-14"
         >
           PARK MINWOOK
         </motion.p>
-
-        {/* Role badge */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.85 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.5, delay: 1.1 }}
-          className="inline-flex items-center gap-2 px-5 py-2 rounded-full border border-violet-500/30 bg-violet-500/10 mb-12"
-        >
-          <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse" />
-          <span className="text-sm text-violet-200 tracking-wide">풀스택 개발자</span>
-        </motion.div>
 
         {/* CTA buttons */}
         <motion.div
